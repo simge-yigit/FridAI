@@ -61,7 +61,7 @@ FridAI/
 - **Rooted Android device** (or emulator) with USB debugging enabled
 - **Frida server** running on the device (`frida-server` binary matching your device architecture)
 - **ADB** configured and the device visible via `adb devices`
-- **Anthropic API key** for the full pipeline (recon-only mode works without one)
+
 
 > **Important:** The `frida` Python package version must match the `frida-server` version on your device exactly. Verify with `frida --version` (host) vs `frida-server --version` (device).
 
@@ -124,23 +124,7 @@ Edit `config.json` (copied from `config.example.json`):
 }
 ```
 
-| Key | Description |
-|-----|-------------|
-| `target_package` | Android package to target |
-| `task` | Analysis task |
-| `model` | Claude model to use (`claude-sonnet-4-20250514` or `claude-opus-4-20250514`) |
-| `max_retries` | Max self-healing retry attempts |
-| `recon_timeout` | Base timeout (seconds) for each recon layer |
-| `inject_wait` | Seconds to wait after injection before checking for errors |
 
-## Testing
-
-```bash
-pip install -r requirements-dev.txt
-pytest tests/ -v
-```
-
-Tests cover the pure-logic functions (no device needed): LLM response cleaning, recon data formatting, injection log parsing, and the AXML network security config parser.
 
 ## License
 
