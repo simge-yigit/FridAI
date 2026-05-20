@@ -1,0 +1,7 @@
+# frida-tools pulls the frida package automatically.
+# IMPORTANT: frida version must match the frida-server version running on
+# the target device exactly (e.g., frida-tools 12.5.0 needs frida-server 16.x
+# of the same ABI). Check: frida --version vs frida-server --version.
+frida-tools>=12.0.0
+anthropic>=0.42.0
+pyaxmlparser>=0.3.24
